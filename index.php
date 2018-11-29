@@ -26,4 +26,23 @@ class Database
 		}
 		
 	}
+
+	public function fetchAll($query){
+
+		$stmt = $this->pdo->prepare($query);
+		 $stmt->execute();
+		 $rows = $stmt->rowCount();
+
+		 if ($rows > 0) {
+		 	return fetchAll();
+		 }else{
+		 	return -1;
+		 }
+
+
+	}
+
+	public function fetchOne($query,$parameter){
+
+	}
 }
